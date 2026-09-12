@@ -1,13 +1,46 @@
-<label>محتوى المقال:</label>
-        <textarea id="content" rows="6" required></textarea>
-        
-        <button type="submit">نشر المقال</button>
-    </form>
+<!-- صندوق تسجيل الدخول -->
+<div class="login-box" id="loginScreen">
+    <h3>تسجيل الدخول لوحة التحكم</h3>
+    <input type="password" id="passwordInput" placeholder="أدخل كلمة المرور">
+    <button onclick="checkPassword()">دخول</button>
+    <div class="error" id="errorMsg"></div>
+</div>
+
+<!-- لوحة التحكم الحقيقية -->
+<div class="admin-box" id="adminScreen">
+    <h3>لوحة التحكم</h3>
+    <textarea id="articleContent" rows="5" placeholder="اكتب محتوى المقال هنا..."></textarea>
+    <button onclick="publishArticle()">نشر المقال</button>
 </div>
 
 <script>
-    document.getElementById('post-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('تم استلام المقال!');
-    });
+    // كلمة المرور المعتمدة بدقة
+    const correctPassword = "2003aA@Th22";
+
+    function checkPassword() {
+        const enteredPass = document.getElementById('passwordInput').value;
+        if (enteredPass === correctPassword) {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('adminScreen').style.display = 'block';
+        } else {
+            document.getElementById('errorMsg').innerText = "كلمة المرور غير صحيحة!";
+        }
+    }
+
+    function publishArticle() {
+        const content = document.getElementById('articleContent').value;
+        if(content.trim() === "") {
+            alert("يرجى كتابة محتوى المقال أولاً!");
+            return;
+        }
+
+        // حفظ المقال في الذاكرة المحلية (LocalStorage) ليظهر في الصفحة الرئيسية
+        let articles = JSON.parse(localStorage.getItem('savedArticles')) || [];
+        articles.push(content);
+        localStorage.setItem('savedArticles', JSON.stringify(articles));
+
+        alert("تم نشر المقال بنجاح!");
+        document.getElementById('articleContent').value = "";
+    }
 </script>
+
