@@ -786,18 +786,6 @@
                 return false;
             }
         });
-
-        // [3] مصيدة كشف أدوات المطورين (Debugger / DevTools Trap)
-        let devtoolsOpen = false;
-        const threshold = 160;
-        setInterval(() => {
-            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-            if ((widthThreshold || heightThreshold) && !devtoolsOpen) {
-                devtoolsOpen = true;
-                document.body.innerHTML = '<div style="background:#06080d;color:#c9a84c;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Cairo;text-align:center;direction:rtl;"><h2>تم رصد محاولة وصول غير مصرح بها أو فحص لبرمجيات الموقع. تم حظر الجلسة لأسباب أمنية.</h2></div>';
-            }
-        }, 1000);
     })();
 
     // [4] تطهير مدخلات البحث والنصوص لمنع حقن البيانات (Input Sanitization & XSS Prevention)
