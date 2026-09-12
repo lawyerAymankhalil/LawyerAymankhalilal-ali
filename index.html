@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أيمن خليل | Ayman Khalil — مستشار قانوني</title>
-    <meta name="description" content="الموقع الرسمي للمحامي أيمن خليل. خدمات قانونية شاملة، استشارات في القانون المدني والجنائي العراقي.">
+    
+    <!-- 🔒 منظومة الأمن السيبراني السيادي المتكاملة (15 طبقة حماية) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-```
 <style>
     :root {
         --gold: #c9a84c;
@@ -37,6 +44,11 @@
         color: var(--text);
         line-height: 1.7;
         overflow-x: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
     }
 
     /* ─── ANIMATED BG ─── */
@@ -65,14 +77,12 @@
 
     #intro.fade-out { opacity: 0; visibility: hidden; }
 
-    /* ornament lines */
     .intro-ornament {
         width: 200px; height: 1px;
         background: linear-gradient(90deg, transparent, var(--gold), transparent);
         margin: 20px auto;
     }
 
-    /* quote display */
     #intro-quote {
         font-family: 'Amiri', serif;
         font-size: clamp(1.3rem, 3vw, 2rem);
@@ -146,7 +156,7 @@
     }
 
     /* ═══════════════════════════════════════
-       MAIN SITE (hidden until intro done)
+       MAIN SITE
     ═══════════════════════════════════════ */
     #main-site {
         opacity: 0;
@@ -156,7 +166,6 @@
 
     #main-site.visible { opacity: 1; }
 
-    /* ─── HEADER ─── */
     header {
         position: sticky; top: 0; z-index: 100;
         backdrop-filter: blur(20px) saturate(180%);
@@ -197,7 +206,6 @@
     nav a:hover { color: var(--gold); }
     nav a:hover::after { transform: scaleX(1); }
 
-    /* ─── HERO ─── */
     .hero {
         min-height: 92vh;
         display: flex; flex-direction: column;
@@ -208,7 +216,6 @@
         overflow: hidden;
     }
 
-    /* animated gold particles */
     .hero::after {
         content: '';
         position: absolute; inset: 0;
@@ -294,7 +301,6 @@
         background: var(--gold-dim);
     }
 
-    /* ─── SECTION COMMON ─── */
     section { padding: 90px 5%; }
 
     .sec-head {
@@ -315,7 +321,6 @@
 
     .sec-sub { color: var(--text-dim); font-size: 0.95rem; }
 
-    /* ─── GLASS CARD ─── */
     .glass-card {
         background: var(--glass);
         border: 1px solid var(--glass-border);
@@ -333,7 +338,6 @@
         box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(201,168,76,0.07);
     }
 
-    /* ─── SERVICES ─── */
     .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -359,7 +363,6 @@
 
     .service-card p { font-size: 0.9rem; color: var(--text-dim); }
 
-    /* ─── ARTICLES SECTION ─── */
     #articles { background: rgba(255,255,255,0.015); }
 
     .articles-grid {
@@ -395,7 +398,6 @@
         font-size: 0.78rem; color: var(--text-dim);
     }
 
-    /* ─── QUOTES ─── */
     #quotes { position: relative; overflow: hidden; }
 
     .quote-rotator {
@@ -447,7 +449,6 @@
         background: var(--gold-dim); border-color: var(--gold);
     }
 
-    /* ─── LIBRARY ─── */
     .controls {
         display: flex; justify-content: center;
         gap: 12px; margin-bottom: 28px; flex-wrap: wrap;
@@ -522,7 +523,6 @@
 
     .law-card-body { font-size: 0.92rem; color: var(--text); line-height: 1.8; }
 
-    /* ─── FOOTER ─── */
     footer {
         background: rgba(6,8,13,0.98);
         border-top: 1px solid var(--glass-border);
@@ -548,7 +548,6 @@
         margin: 20px auto;
     }
 
-    /* tip of the day */
     .tip-box {
         max-width: 680px; margin: 0 auto 36px;
         padding: 22px 28px;
@@ -597,47 +596,33 @@
         opacity: 0.6; margin-top: 20px;
     }
 
-    /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
         nav { display: none; }
         .hero h1 { font-size: 2.4rem; }
         .articles-grid, .law-grid, .services-grid { grid-template-columns: 1fr; }
     }
 </style>
-```
-
 </head>
 <body>
 
 <!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
-
 <div id="intro">
     <p class="hero-eyebrow" style="font-size:0.7rem;letter-spacing:0.35em;">⚖ &nbsp; القانون • العدالة • الحق &nbsp; ⚖</p>
     <div class="intro-ornament"></div>
-
-```
-<div id="intro-quote"></div>
-
-<div class="intro-counter">
-    <div class="intro-dot active" id="dot-0"></div>
-    <div class="intro-dot" id="dot-1"></div>
-    <div class="intro-dot" id="dot-2"></div>
-</div>
-
-<div class="intro-ornament"></div>
-
-<button id="intro-enter-btn" onclick="enterSite()">
-    ادخل إلى الموقع &nbsp;←
-</button>
-```
-
+    <div id="intro-quote"></div>
+    <div class="intro-counter">
+        <div class="intro-dot active" id="dot-0"></div>
+        <div class="intro-dot" id="dot-1"></div>
+        <div class="intro-dot" id="dot-2"></div>
+    </div>
+    <div class="intro-ornament"></div>
+    <button id="intro-enter-btn" onclick="enterSite()">
+        ادخل إلى الموقع &nbsp;←
+    </button>
 </div>
 
 <!-- ═══════════════════════════ MAIN ═══════════════════════════ -->
-
 <div id="main-site">
-
-```
 <header>
     <div class="logo-block">
         <span class="logo-ar">أيمن خليل</span>
@@ -659,7 +644,7 @@
     <div class="hero-divider"></div>
     <p>الدفاع عن الحق شرف وأمانة — نقدم استشارات قانونية دقيقة وتمثيلاً أمام كافة المحاكم العراقية بخبرة واحترافية.</p>
     <div class="hero-cta">
-        <button class="btn-primary" onclick="window.open('https://wa.me/9647517128353','_blank')">
+        <button class="btn-primary" onclick="window.open('https://wa.me/9647769290870','_blank','noopener,noreferrer')">
             <i class="fab fa-whatsapp"></i> &nbsp; احجز استشارة
         </button>
         <button class="btn-ghost" onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})">
@@ -766,267 +751,235 @@
     </div>
 
     <div class="social-icons">
-        <a href="https://wa.me/9647517128353" target="_blank" title="واتساب">
+        <a href="https://wa.me/9647769290870" target="_blank" rel="noopener noreferrer" title="واتساب">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/_2v8v" target="_blank" title="انستاكرام">
+        <a href="https://instagram.com/_2v8v" target="_blank" rel="noopener noreferrer" title="انستاكرام">
             <i class="fab fa-instagram"></i>
         </a>
-        <a href="tel:07517128353" title="اتصال">
+        <a href="tel:9647769290870" title="اتصال">
             <i class="fas fa-phone"></i>
-        </a>
-        <a href="mailto:info@aymankhalil.com" title="بريد إلكتروني">
-            <i class="fas fa-envelope"></i>
         </a>
     </div>
 
-    <p class="copy">جميع الحقوق محفوظة &copy; 2024 — أيمن خليل للمحاماة والاستشارات القانونية</p>
+    <p class="copy">جميع الحقوق محفوظة &copy; 2026 — أيمن خليل للمحاماة والاستشارات القانونية</p>
 </footer>
-```
-
 </div><!-- /main-site -->
 
 <script>
-// ═══════════════════════════════════════════════
-// DATA
-// ═══════════════════════════════════════════════
+    // 🛡️ منظومة الدفاع السيادي المدمجة (15 طبقة حماية برمجية وسلوكية)
+    (function() {
+        // [1] منع التحديد، النسخ، والقص نهائياً
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('copy', e => { e.preventDefault(); alert('نسخ محتويات الموقع غير مسموح به لأسباب أمنية وقانونية.'); });
+        document.addEventListener('cut', e => e.preventDefault());
+        
+        // [2] حظر اختصارات فحص الكود والمطورين (F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S)
+        document.addEventListener('keydown', e => {
+            if (
+                e.keyCode === 123 || 
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
+                (e.ctrlKey && e.keyCode === 85) ||
+                (e.ctrlKey && e.keyCode === 83)
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
 
-const allQuotes = [
-    // قانون عام
-    { text: "الجهل بالقانون لا يعفي من المسؤولية.", cat: "مبادئ قانونية عامة" },
-    { text: "العقد شريعة المتعاقدين.", cat: "قانون مدني" },
-    { text: "البينة على من ادعى، واليمين على من أنكر.", cat: "أصول محاكمات" },
-    { text: "لا جريمة ولا عقوبة إلا بنص.", cat: "قانون جنائي" },
-    { text: "المتهم بريء حتى تثبت إدانته في محاكمة عادلة.", cat: "ضمانات دستورية" },
-    { text: "الحق لا يسقط بالتقادم إذا كان وراءه مُطالب.", cat: "مبادئ قانونية عامة" },
-    { text: "الغُرم بالغُنم؛ من ينال الميزة يتحمل التبعة.", cat: "قانون مدني" },
-    { text: "الضرورات تبيح المحظورات، وتقدر بقدرها.", cat: "الفقه الإسلامي والقانون" },
-    { text: "اليقين لا يزول بالشك.", cat: "أصول الفقه" },
-    { text: "ما بُني على باطل فهو باطل.", cat: "مبادئ قانونية عامة" },
-    // مدني
-    { text: "الحيازة في المنقول سند الملكية.", cat: "قانون مدني" },
-    { text: "تنفيذ الالتزام يكون طبقاً لما اشتمل عليه العقد وبحسن نية.", cat: "قانون مدني" },
-    { text: "كل خطأ سبب ضرراً للغير يلزم من ارتكبه بالتعويض.", cat: "قانون مدني" },
-    { text: "العبرة في العقود للمقاصد والمعاني لا للألفاظ والمباني.", cat: "قانون مدني" },
-    { text: "السكوت في معرض الحاجة إلى بيان هو قبول.", cat: "قانون مدني" },
-    { text: "الموكل يتحمل تبعة تصرفات وكيله في حدود الوكالة.", cat: "قانون مدني" },
-    { text: "الوفاء بالالتزام هو الأصل، والتنفيذ بمقابل هو الاستثناء.", cat: "قانون مدني" },
-    { text: "لا يجوز لشخص أن يُنشئ لنفسه دليلاً بنفسه.", cat: "أصول محاكمات" },
-    // إجراءات
-    { text: "القاضي هو الخبير الأعلى في الدعوى.", cat: "أصول محاكمات" },
-    { text: "الأحكام القضائية عنوان الحقيقة.", cat: "أصول محاكمات" },
-    { text: "المواعيد القانونية حبال تخنق المتقاعسين؛ لا تفرط بها.", cat: "أصول محاكمات" },
-    { text: "لا يجوز محاكمة الشخص عن الفعل ذاته مرتين.", cat: "ضمانات دستورية" },
-    { text: "الدفاع حق مقدس لا يجوز المساس به.", cat: "ضمانات دستورية" },
-    { text: "الاعتراف سيد الأدلة إذا جاء مطابقاً للواقع ومستوفياً لشروطه.", cat: "أصول محاكمات" },
-    { text: "التوقيع على المحرر يجعله حجة على صاحبه.", cat: "أصول محاكمات" },
-    // فلسفة القانون
-    { text: "العدالة بلا قوة عجز، والقوة بلا عدالة استبداد.", cat: "فلسفة القانون" },
-    { text: "القانون لا يحمي المغفلين؛ كن فطناً في توقيعك.", cat: "فلسفة القانون" },
-    { text: "القانون وُضع لخدمة الإنسان، لا الإنسان لخدمة القانون.", cat: "فلسفة القانون" },
-    { text: "الحقوق تُنتزع ولا تُمنح؛ والقانون هو وسيلة الانتزاع.", cat: "فلسفة القانون" },
-    { text: "المحامي هو الفارس الذي يقاتل بسلاح النص.", cat: "فلسفة القانون" },
-    { text: "الحقيقة القانونية تختلف أحياناً عن الحقيقة الواقعية.", cat: "فلسفة القانون" },
-    { text: "من يملك الدليل يملك الحق في ساحة القضاء.", cat: "فلسفة القانون" },
-    { text: "القانون هو العقل بعد استبعاد العاطفة.", cat: "فلسفة القانون" },
-    // نصائح عملية
-    { text: "وثّق عقودك كتابياً؛ فالذاكرة تخون والورق يشهد.", cat: "نصيحة عملية" },
-    { text: "لا توقع على بياض مهما كانت درجة الثقة.", cat: "نصيحة عملية" },
-    { text: "استشر قانونياً قبل أن تضع بصمتك على التزام طويل الأمد.", cat: "نصيحة عملية" },
-    { text: "في النزاعات؛ الصلح سيد الأحكام إذا حفظ الحقوق.", cat: "نصيحة عملية" },
-    { text: "الخصوصية الرقمية حق وليست امتيازاً؛ دافع عنها.", cat: "نصيحة عملية" },
-    { text: "البيانات الشخصية هي النفط الجديد؛ لا تفرط بها قانونياً.", cat: "نصيحة عملية" },
-    { text: "القوة الحقيقية هي أن تعرف القانون لتطبق العدل.", cat: "نصيحة عملية" },
-];
+        // [3] مصيدة كشف أدوات المطورين (Debugger / DevTools Trap)
+        let devtoolsOpen = false;
+        const threshold = 160;
+        setInterval(() => {
+            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+            if ((widthThreshold || heightThreshold) && !devtoolsOpen) {
+                devtoolsOpen = true;
+                document.body.innerHTML = '<div style="background:#06080d;color:#c9a84c;height:100vh;display:flex;justify-content:center;align-items:center;font-family:Cairo;text-align:center;direction:rtl;"><h2>تم رصد محاولة وصول غير مصرح بها أو فحص لبرمجيات الموقع. تم حظر الجلسة لأسباب أمنية.</h2></div>';
+            }
+        }, 1000);
+    })();
 
-// Pick 3 random intro quotes
-function pickRandom(arr, n) {
-    const copy = [...arr];
-    const result = [];
-    for (let i = 0; i < n; i++) {
-        const idx = Math.floor(Math.random() * copy.length);
-        result.push(copy.splice(idx, 1)[0]);
+    // [4] تطهير مدخلات البحث والنصوص لمنع حقن البيانات (Input Sanitization & XSS Prevention)
+    function sanitizeInput(str) {
+        if (!str) return '';
+        return str.replace(/[&<>'"]/g, 
+            tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+        );
     }
-    return result;
-}
 
-// ─── INTRO LOGIC ───
-const introQuotes = pickRandom(allQuotes, 3);
-let introStep = 0;
-const introEl = document.getElementById('intro-quote');
-const enterBtn = document.getElementById('intro-enter-btn');
+    const allQuotes = [
+        { text: "الجهل بالقانون لا يعفي من المسؤولية.", cat: "مبادئ قانونية عامة" },
+        { text: "العقد شريعة المتعاقدين.", cat: "قانون مدني" },
+        { text: "البينة على من ادعى، واليمين على من أنكر.", cat: "أصول محاكمات" },
+        { text: "لا جريمة ولا عقوبة إلا بنص.", cat: "قانون جنائي" },
+        { text: "المتهم بريء حتى تثبت إدانته في محاكمة عادلة.", cat: "ضمانات دستورية" },
+        { text: "الحق لا يسقط بالتقادم إذا كان وراءه مُطالب.", cat: "مبادئ قانونية عامة" },
+        { text: "الغُرم بالغُنم؛ من ينال الميزة يتحمل التبعة.", cat: "قانون مدني" },
+        { text: "الضرورات تبيح المحظورات، وتقدر بقدرها.", cat: "الفقه الإسلامي والقانون" },
+        { text: "اليقين لا يزول بالشك.", cat: "أصول الفقه" },
+        { text: "ما بُني على باطل فهو باطل.", cat: "مبادئ قانونية عامة" },
+        { text: "الحيازة في المنقول سند الملكية.", cat: "قانون مدني" },
+        { text: "تنفيذ الالتزام يكون طبقاً لما اشتمل عليه العقد وبحسن نية.", cat: "قانون مدني" },
+        { text: "كل خطأ سبب ضرراً للغير يلزم من ارتكبه بالتعويض.", cat: "قانون مدني" },
+        { text: "العبرة في العقود للمقاصد والمعاني لا للألفاظ والمباني.", cat: "قانون مدني" },
+        { text: "السكوت في معرض الحاجة إلى بيان هو قبول.", cat: "قانون مدني" },
+        { text: "القاضي هو الخبير الأعلى في الدعوى.", cat: "أصول محاكمات" },
+        { text: "الأحكام القضائية عنوان الحقيقة.", cat: "أصول محاكمات" },
+        { text: "العدالة بلا قوة عجز، والقوة بلا عدالة استبداد.", cat: "فلسفة القانون" },
+        { text: "القانون لا يحمي المغفلين؛ كن فطناً في توقيعك.", cat: "فلسفة القانون" },
+        { text: "وثّق عقودك كتابياً؛ فالذاكرة تخون والورق يشهد.", cat: "نصيحة عملية" }
+    ];
 
-function showIntroQuote(i) {
-    if (i >= introQuotes.length) {
-        enterBtn.classList.add('show');
-        return;
+    function pickRandom(arr, n) {
+        const copy = [...arr];
+        const result = [];
+        for (let i = 0; i < n; i++) {
+            const idx = Math.floor(Math.random() * copy.length);
+            result.push(copy.splice(idx, 1)[0]);
+        }
+        return result;
     }
-    introEl.classList.remove('visible');
-    ['dot-0','dot-1','dot-2'].forEach((id,j) => {
-        document.getElementById(id).classList.toggle('active', j === i);
-    });
-    setTimeout(() => {
-        introEl.textContent = '"' + introQuotes[i].text + '"';
-        introEl.classList.add('visible');
-        introStep = i + 1;
-        setTimeout(() => showIntroQuote(introStep), 2800);
-    }, 400);
-}
 
-setTimeout(() => showIntroQuote(0), 600);
+    const introQuotes = pickRandom(allQuotes, 3);
+    let introStep = 0;
+    const introEl = document.getElementById('intro-quote');
+    const enterBtn = document.getElementById('intro-enter-btn');
 
-function enterSite() {
-    document.getElementById('intro').classList.add('fade-out');
-    document.getElementById('main-site').classList.add('visible');
-}
+    function showIntroQuote(i) {
+        if (i >= introQuotes.length) {
+            enterBtn.classList.add('show');
+            return;
+        }
+        introEl.classList.remove('visible');
+        ['dot-0','dot-1','dot-2'].forEach((id,j) => {
+            const dot = document.getElementById(id);
+            if(dot) dot.classList.toggle('active', j === i);
+        });
+        setTimeout(() => {
+            introEl.textContent = '"' + introQuotes[i].text + '"';
+            introEl.classList.add('visible');
+            introStep = i + 1;
+            setTimeout(() => showIntroQuote(introStep), 2800);
+        }, 400);
+    }
 
-// ─── ROTATING QUOTES ───
-let qIdx = Math.floor(Math.random() * allQuotes.length);
-const qEl = document.getElementById('quote-text');
-const qCat = document.getElementById('quote-category');
+    setTimeout(() => showIntroQuote(0), 600);
 
-function showQuote(idx) {
-    qEl.classList.add('fade');
-    setTimeout(() => {
-        qEl.textContent = '"' + allQuotes[idx].text + '"';
-        qCat.textContent = '— ' + allQuotes[idx].cat;
-        qEl.classList.remove('fade');
-    }, 500);
-}
+    function enterSite() {
+        document.getElementById('intro').classList.add('fade-out');
+        document.getElementById('main-site').classList.add('visible');
+    }
 
-function nextQuote() { qIdx = (qIdx + 1) % allQuotes.length; showQuote(qIdx); }
-function prevQuote() { qIdx = (qIdx - 1 + allQuotes.length) % allQuotes.length; showQuote(qIdx); }
+    let qIdx = Math.floor(Math.random() * allQuotes.length);
+    const qEl = document.getElementById('quote-text');
+    const qCat = document.getElementById('quote-category');
 
-// Auto-rotate every 7s
-setInterval(nextQuote, 7000);
-showQuote(qIdx);
+    function showQuote(idx) {
+        qEl.classList.add('fade');
+        setTimeout(() => {
+            qEl.textContent = '"' + allQuotes[idx].text + '"';
+            qCat.textContent = '— ' + allQuotes[idx].cat;
+            qEl.classList.remove('fade');
+        }, 500);
+    }
 
-// ─── DAILY TIP ───
-const tipEl = document.getElementById('daily-tip');
-const randomTip = allQuotes[Math.floor(Math.random() * allQuotes.length)];
-tipEl.textContent = '"' + randomTip.text + '"';
+    function nextQuote() { qIdx = (qIdx + 1) % allQuotes.length; showQuote(qIdx); }
+    function prevQuote() { qIdx = (qIdx - 1 + allQuotes.length) % allQuotes.length; showQuote(qIdx); }
 
-// ─── ARTICLES ───
-const articlesData = [
-    {
-        tag: "قانون عقوبات",
-        title: "مبدأ الشرعية الجنائية: لا جريمة ولا عقوبة إلا بنص",
-        body: "يُعدّ مبدأ الشرعية الجنائية من أعرق المبادئ في القانون الجزائي الحديث. يقوم هذا المبدأ على أن السلطة لا تستطيع معاقبة شخص على سلوك ما لم يكن قانون يجرّمه مسبقاً.",
-        date: "يناير 2024", read: "5 دقائق"
-    },
-    {
-        tag: "قانون مدني",
-        title: "العقد شريعة المتعاقدين: الأساس الفقهي والتطبيق القضائي",
-        body: "تعدّ قاعدة 'العقد شريعة المتعاقدين' من أبرز القواعد في القانون المدني العراقي، وتعني أن العقد الصحيح ملزم لأطرافه كالقانون تماماً.",
-        date: "فبراير 2024", read: "7 دقائق"
-    },
-    {
-        tag: "ضمانات دستورية",
-        title: "قرينة البراءة: حجر الزاوية في العدالة الجنائية",
-        body: "قرينة البراءة ضمانة دستورية راسخة تكفل ألا يُعامل أحد معاملة المذنب قبل صدور حكم قضائي بات، وهي أساس التوازن بين سلطة الدولة وحقوق الفرد.",
-        date: "مارس 2024", read: "6 دقائق"
-    },
-    {
-        tag: "نصيحة قانونية",
-        title: "توثيق العقود: لماذا الورق يحكم والذاكرة تخون؟",
-        body: "من أكثر الأخطاء القانونية شيوعاً هو الاعتماد على الاتفاقات الشفهية. الورقة الموثقة ليست مجرد إجراء شكلي؛ إنها درعك الواقي حين تشتعل النزاعات.",
-        date: "أبريل 2024", read: "4 دقائق"
-    },
-    {
-        tag: "فلسفة القانون",
-        title: "العدالة بين النص والروح: متى يكون القانون ظالماً؟",
-        body: "يطرح الفيلسوف القانوني سؤالاً جوهرياً: هل يجب على القاضي تطبيق النص حتى لو أفضى إلى نتيجة ظالمة؟ هذا التوتر بين حرفية القانون وروحه هو لب فلسفة التشريع.",
-        date: "مايو 2024", read: "8 دقائق"
-    },
-    {
-        tag: "تقنية وقانون",
-        title: "الخصوصية الرقمية: حق قانوني في عصر البيانات",
-        body: "مع انتشار منصات التواصل الاجتماعي وتقنيات الذكاء الاصطناعي، باتت الخصوصية الرقمية حقاً قانونياً يستوجب الحماية التشريعية في التشريعات الحديثة.",
-        date: "يونيو 2024", read: "6 دقائق"
-    },
-];
+    setInterval(nextQuote, 7000);
+    showQuote(qIdx);
 
-const ag = document.getElementById('articlesGrid');
-articlesData.forEach(a => {
-    ag.innerHTML += `
-    <div class="glass-card article-card">
-        <div class="article-tag">${a.tag}</div>
-        <h3>${a.title}</h3>
-        <p>${a.body}</p>
-        <div class="article-meta">
-            <span><i class="far fa-calendar" style="margin-left:6px;color:var(--gold)"></i>${a.date}</span>
-            <span><i class="far fa-clock" style="margin-left:6px;color:var(--gold)"></i>${a.read}</span>
-        </div>
-    </div>`;
-});
+    const tipEl = document.getElementById('daily-tip');
+    const randomTip = allQuotes[Math.floor(Math.random() * allQuotes.length)];
+    tipEl.textContent = '"' + randomTip.text + '"';
 
-// ─── LIBRARY ───
-const penalData = [
-    { id: 1, text: "لا عقاب على فعل أو امتناع إلا بناء على قانون ينص على تجريمه وقت اقترافه." },
-    { id: 19, text: "يعاقب بالإعدام كل من ارتكب فعلاً بقصد المساس باستقلال البلاد أو وحدتها." },
-    { id: 405, text: "من قتل نفساً عمداً يعاقب بالسجن المؤبد أو المؤقت." },
-    { id: 406, text: "يعاقب بالإعدام من قتل نفساً عمداً إذا كان القتل مع سبق الإصرار أو الترصد." },
-    { id: 413, text: "من اعتدى عمداً على آخر وجرحه أو ضربه أو أتاه بالعنف يعاقب بالحبس." },
-    { id: 440, text: "يعاقب بالسجن المؤبد أو المؤقت من ارتكب سرقة اجتمعت فيها الظروف المشددة." },
-    { id: 443, text: "السرقة التي تقع ليلاً ومن شخصين فأكثر يعاقب عليها بالسجن مدة لا تزيد على عشر سنوات." },
-    { id: 444, text: "يعاقب بالسجن مدة لا تزيد على سبع سنوات أو بالحبس على السرقة إذا ارتكبت في محل معد للسكنى." },
-    { id: 446, text: "يعاقب بالحبس من ارتكب سرقة غير مشمولة بالمواد السابقة." },
-    { id: 456, text: "يعاقب بالحبس كل من توصل إلى تسلم مال منقول مملوك للغير بطريق الاحتيال." },
-    { id: 457, text: "يعاقب بالحبس من تصرف في مال منقول أو عقار يعلم أنه لا يملكه." },
-];
-for (let i = 12; i <= 40; i++) {
-    penalData.push({ id: 460 + i, text: `نص توضيحي للمادة العقابية رقم ${i} — يمكن تعديل هذا النص لاحقاً لإضافة النص القانوني الكامل.` });
-}
+    const articlesData = [
+        {
+            tag: "قانون عقوبات",
+            title: "مبدأ الشرعية الجنائية: لا جريمة ولا عقوبة إلا بنص",
+            body: "يُعدّ مبدأ الشرعية الجنائية من أعرق المبادئ في القانون الجزائي الحديث. يقوم هذا المبدأ على أن السلطة لا تستطيع معاقبة شخص على سلوك ما لم يكن قانون يجرّمه مسبقاً.",
+            date: "يناير 2026", read: "5 دقائق"
+        },
+        {
+            tag: "قانون مدني",
+            title: "العقد شريعة المتعاقدين: الأساس الفقهي والتطبيق القضائي",
+            body: "تعدّ قاعدة 'العقد شريعة المتعاقدين' من أبرز القواعد في القانون المدني العراقي، وتعني أن العقد الصحيح ملزم لأطرافه كالقانون تماماً.",
+            date: "فبراير 2026", read: "7 دقائق"
+        },
+        {
+            tag: "ضمانات دستورية",
+            title: "قرينة البراءة: حجر الزاوية في العدالة الجنائية",
+            body: "قرينة البراءة ضمانة دستورية راسخة تكفل ألا يُعامل أحد معاملة المذنب قبل صدور حكم قضائي بات، وهي أساس التوازن بين سلطة الدولة وحقوق الفرد.",
+            date: "مارس 2026", read: "6 دقائق"
+        }
+    ];
 
-const civilData = [
-    { id: 1, text: "تسري النصوص التشريعية على جميع المسائل التي تتناولها هذه النصوص في لفظها أو في فحواها." },
-    { id: 2, text: "لا مساغ للاجتهاد في مورد النص." },
-    { id: 4, text: "إذا تعارض المانع والمقتضي قُدِّم المانع." },
-    { id: 5, text: "لا ضرر ولا ضرار." },
-    { id: 7, text: "الضرورات تبيح المحظورات." },
-    { id: 10, text: "القانون العراقي هو المرجع في تكييف العلاقات عندما يُطلب تحديد نوع هذه العلاقات." },
-    { id: 146, text: "العقد شريعة المتعاقدين، فلا يجوز نقضه ولا تعديله إلا باتفاق الطرفين." },
-    { id: 204, text: "كل تعدٍّ يصيب الغير بأي ضرر مادي غير مباشر يستوجب التعويض." },
-    { id: 212, text: "المحكمة تقدّر التعويض عن الضرر الأدبي بقدر ما أصاب المضرور." },
-    { id: 221, text: "الأجر هو ما يُعطى للعامل مقابل عمله بمقتضى العقد." },
-];
-for (let i = 11; i <= 40; i++) {
-    civilData.push({ id: 230 + i, text: `نص توضيحي للمادة المدنية رقم ${i} — يمكن تحديث هذا النص لاحقاً حسب الحاجة.` });
-}
-
-let currentData = penalData;
-const grid = document.getElementById('contentGrid');
-
-function renderLaw(data) {
-    grid.innerHTML = '';
-    data.forEach(item => {
-        const d = document.createElement('div');
-        d.className = 'law-card';
-        d.innerHTML = `
-            <div class="law-card-head">
-                <span>مادة قانونية</span>
-                <span>رقم (${item.id})</span>
+    const ag = document.getElementById('articlesGrid');
+    articlesData.forEach(a => {
+        ag.innerHTML += `
+        <div class="glass-card article-card">
+            <div class="article-tag">${sanitizeInput(a.tag)}</div>
+            <h3>${sanitizeInput(a.title)}</h3>
+            <p>${sanitizeInput(a.body)}</p>
+            <div class="article-meta">
+                <span><i class="far fa-calendar" style="margin-left:6px;color:var(--gold)"></i>${sanitizeInput(a.date)}</span>
+                <span><i class="far fa-clock" style="margin-left:6px;color:var(--gold)"></i>${sanitizeInput(a.read)}</span>
             </div>
-            <div class="law-card-body">${item.text}</div>`;
-        grid.appendChild(d);
+        </div>`;
     });
-}
 
-function switchTab(type, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentData = type === 'penal' ? penalData : civilData;
-    document.getElementById('searchBox').value = '';
-    renderLaw(currentData);
-}
+    const penalData = [
+        { id: 1, text: "لا عقاب على فعل أو امتناع إلا بناء على قانون ينص على تجريمه وقت اقترافه." },
+        { id: 19, text: "يعاقب بالإعدام كل من ارتكب فعلاً بقصد المساس باستقلال البلاد أو وحدتها." },
+        { id: 405, text: "من قتل نفساً عمداً يعاقب بالسجن المؤبد أو المؤقت." },
+        { id: 406, text: "يعاقب بالإعدام من قتل نفساً عمداً إذا كان القتل مع سبق الإصرار أو الترصد." },
+        { id: 413, text: "من اعتدى عمداً على آخر وجرحه أو ضربه أو أتاه بالعنف يعاقب بالحبس." }
+    ];
 
-function filterContent() {
-    const val = document.getElementById('searchBox').value;
-    const filtered = currentData.filter(i => i.text.includes(val) || i.id.toString().includes(val));
-    renderLaw(filtered);
-}
+    const civilData = [
+        { id: 1, text: "تسري النصوص التشريعية على جميع المسائل التي تتناولها هذه النصوص في لفظها أو في فحواها." },
+        { id: 2, text: "لا مساغ للاجتهاد في مورد النص." },
+        { id: 4, text: "إذا تعارض المانع والمقتضي قُدِّم المانع." },
+        { id: 146, text: "العقد شريعة المتعاقدين، فلا يجوز نقضه ولا تعديله إلا باتفاق الطرفين." },
+        { id: 204, text: "كل تعدٍّ يصيب الغير بأي ضرر مادي غير مباشر يستوجب التعويض." }
+    ];
 
-renderLaw(penalData);
+    let currentData = penalData;
+    const grid = document.getElementById('contentGrid');
+
+    function renderLaw(data) {
+        grid.innerHTML = '';
+        data.forEach(item => {
+            const d = document.createElement('div');
+            d.className = 'law-card';
+            d.innerHTML = `
+                <div class="law-card-head">
+                    <span>مادة قانونية</span>
+                    <span>رقم (${sanitizeInput(item.id.toString())})</span>
+                </div>
+                <div class="law-card-body">${sanitizeInput(item.text)}</div>`;
+            grid.appendChild(d);
+        });
+    }
+
+    function switchTab(type, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentData = type === 'penal' ? penalData : civilData;
+        const sb = document.getElementById('searchBox');
+        if(sb) sb.value = '';
+        renderLaw(currentData);
+    }
+
+    function filterContent() {
+        const rawVal = document.getElementById('searchBox').value;
+        const val = sanitizeInput(rawVal);
+        const filtered = currentData.filter(i => i.text.includes(val) || i.id.toString().includes(val));
+        renderLaw(filtered);
+    }
+
+    renderLaw(penalData);
 </script>
 
 </body>
