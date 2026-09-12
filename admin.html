@@ -1,0 +1,13 @@
+<label>محتوى المقال:</label>
+        <textarea id="content" rows="6" required></textarea>
+        
+        <button type="submit">نشر المقال</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('post-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('تم استلام المقال!');
+    });
+</script>
