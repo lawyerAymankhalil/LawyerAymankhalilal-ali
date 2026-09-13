@@ -17,10 +17,12 @@ collections:
         label: "قائمة المقالات"
         file: "data/articles.json"
         fields:
-          - {label: "المقالات", name: "articles", widget: "list", fields:
+          - label: "المقالات"
+            name: "articles"
+            widget: "list"
+            fields:
               - {label: "التصنيف", name: "tag", widget: "string"}
               - {label: "العنوان", name: "title", widget: "string"}
               - {label: "النص", name: "body", widget: "text"}
               - {label: "التاريخ", name: "date", widget: "string"}
               - {label: "مدة القراءة", name: "read", widget: "string"}
-            }
