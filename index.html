@@ -882,40 +882,27 @@
     const randomTip = allQuotes[Math.floor(Math.random() * allQuotes.length)];
     tipEl.textContent = '"' + randomTip.text + '"';
 
-    const articlesData = [
-        {
-            tag: "قانون عقوبات",
-            title: "مبدأ الشرعية الجنائية: لا جريمة ولا عقوبة إلا بنص",
-            body: "يُعدّ مبدأ الشرعية الجنائية من أعرق المبادئ في القانون الجزائي الحديث. يقوم هذا المبدأ على أن السلطة لا تستطيع معاقبة شخص على سلوك ما لم يكن قانون يجرّمه مسبقاً.",
-            date: "يناير 2026", read: "5 دقائق"
-        },
-        {
-            tag: "قانون مدني",
-            title: "العقد شريعة المتعاقدين: الأساس الفقهي والتطبيق القضائي",
-            body: "تعدّ قاعدة 'العقد شريعة المتعاقدين' من أبرز القواعد في القانون المدني العراقي، وتعني أن العقد الصحيح ملزم لأطرافه كالقانون تماماً.",
-            date: "فبراير 2026", read: "7 دقائق"
-        },
-        {
-            tag: "ضمانات دستورية",
-            title: "قرينة البراءة: حجر الزاوية في العدالة الجنائية",
-            body: "قرينة البراءة ضمانة دستورية راسخة تكفل ألا يُعامل أحد معاملة المذنب قبل صدور حكم قضائي بات، وهي أساس التوازن بين سلطة الدولة وحقوق الفرد.",
-            date: "مارس 2026", read: "6 دقائق"
-        }
-    ];
-
     const ag = document.getElementById('articlesGrid');
-    articlesData.forEach(a => {
-        ag.innerHTML += `
-        <div class="glass-card article-card">
-            <div class="article-tag">${sanitizeInput(a.tag)}</div>
-            <h3>${sanitizeInput(a.title)}</h3>
-            <p>${sanitizeInput(a.body)}</p>
-            <div class="article-meta">
-                <span><i class="far fa-calendar" style="margin-left:6px;color:var(--gold)"></i>${sanitizeInput(a.date)}</span>
-                <span><i class="far fa-clock" style="margin-left:6px;color:var(--gold)"></i>${sanitizeInput(a.read)}</span>
-            </div>
-        </div>`;
-    });
+    fetch('data/articles.json')
+        .then(res => res.json())
+        .then(data => {
+            const articlesData = data.articles || [];
+            articlesData.forEach(a => {
+                ag.innerHTML += `
+                <div class="glass-card article-card">
+                    <div class="article-tag">${sanitizeInput(a.tag)}</div>
+                    <h3>${sanitizeInput(a.title)}</h3>
+                    <p>${sanitizeInput(a.body)}</p>
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar" style="margin-left:6px;color:var(--gold)"></i>${sanitizeInput(a.date)}</span>
+                        <span><i class="far fa-clock" style="margin-left:6px;color:var(--gold)"></i>${sanitizeInput(a.read)}</span>
+                    </div>
+                </div>`;
+            });
+        })
+        .catch(() => {
+            ag.innerHTML = '<p style="text-align:center;color:var(--text-dim)">تعذّر تحميل المقالات حالياً.</p>';
+        });
 
     const penalData = [
         { id: 1, text: "لا عقاب على فعل أو امتناع إلا بناء على قانون ينص على تجريمه وقت اقترافه." },
